@@ -89,8 +89,8 @@ export default function Home() {
   return (
     <main style={{ paddingTop: 68 }}>
       {/* ── HERO ──────────────────────────────────────── */}
-      <section style={{ minHeight: "calc(100vh - 68px)", display: "flex", alignItems: "center", padding: "80px 24px 60px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", width: "100%" }}>
+      <section className="hero-section" style={{ minHeight: "calc(100vh - 68px)", display: "flex", alignItems: "center", padding: "80px 24px 60px", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="hero-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", width: "100%" }}>
           {/* LEFT */}
           <div>
             <div className="badge anim-fade-up" style={{ marginBottom: 24 }}>
@@ -113,7 +113,7 @@ export default function Home() {
               production-grade backend architecture, and <strong style={{ color: "#a78bfa" }}>AI/ML</strong> integration.
             </p>
 
-            <div className="anim-fade-up d-300" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48 }}>
+            <div className="anim-fade-up d-300 btn-row" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 48 }}>
               <a href="#projects" className="btn-glow">View Projects →</a>
               <a href="https://wa.me/923021419651" target="_blank" rel="noreferrer" className="whatsapp-btn">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -125,7 +125,7 @@ export default function Home() {
             </div>
 
             {/* STATS */}
-            <div className="anim-fade-up d-400" style={{ display: "flex", gap: 40 }}>
+            <div className="anim-fade-up d-400 stats-row" style={{ display: "flex", gap: 40 }}>
               {[
                 { val: "6+", label: "Live Projects" },
                 { val: "3+", label: "Years Exp." },
@@ -140,7 +140,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT — 3D SCENE */}
-          <div className="anim-scale-in d-300" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 500 }}>
+          <div className="anim-scale-in d-300 visualization-3d" style={{ display: "flex", justifyContent: "center", alignItems: "center", height: 500 }}>
             <div style={{ position: "relative", width: 400, height: 400, display: "flex", alignItems: "center", justifyContent: "center" }}>
               {/* Rings */}
               <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
@@ -275,7 +275,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div
+        <div className="projects-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
@@ -319,6 +319,11 @@ export default function Home() {
                   transition: "transform 160ms ease, box-shadow 160ms ease",
                 }}
               >
+              {/* Glowing 3D Border */}
+              <div className="project-card-glow" />
+              
+              {/* Card Inner Content with 3D depth */}
+              <div className="project-card-inner">
               {/* Card top bar */}
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 20 }}>
                 <div>
@@ -376,6 +381,7 @@ export default function Home() {
                   <path d="M7 17L17 7M17 7H7M17 7v10"/>
                 </svg>
               </a>
+              </div>
             </article>
           ))}
         <style>{`
@@ -392,7 +398,7 @@ export default function Home() {
           <div style={{ height: 1, background: "linear-gradient(90deg, transparent, #38bdf8, #a78bfa, transparent)", opacity: 0.3 }} />
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "start" }}>
+        <div className="about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 60, alignItems: "start" }}>
           {/* About */}
           <div>
             <div className="section-label anim-slide-right" style={{ marginBottom: 16 }}>// about me</div>
@@ -435,7 +441,7 @@ export default function Home() {
             {/* Experience cards */}
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {experience.map((e, i) => (
-                <div key={e.title} className={`glass glass-hover anim-fade-up d-${(i + 2) * 200}`}
+                <div key={e.title} className={`glass glass-hover experience-card anim-fade-up d-${(i + 2) * 200}`}
                   style={{ borderRadius: 12, padding: "20px 24px", display: "flex", gap: 16, alignItems: "flex-start" }}>
                   <div style={{
                     width: 44, height: 44, borderRadius: 10, flexShrink: 0,
@@ -454,8 +460,8 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ─────────────────────────────────── */}
-      <section id="contact" style={{ padding: "0 24px 120px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{
+      <section id="contact" className="contact-section" style={{ padding: "0 24px 120px", maxWidth: 1200, margin: "0 auto" }}>
+        <div className="contact-card" style={{
           background: "linear-gradient(135deg, rgba(56,189,248,0.05), rgba(167,139,250,0.05))",
           border: "1px solid rgba(56,189,248,0.2)",
           borderRadius: 24,
@@ -517,7 +523,7 @@ export default function Home() {
 
       {/* ── FOOTER ──────────────────────────────────── */}
       <footer style={{ borderTop: "1px solid rgba(56,189,248,0.08)", padding: "28px 24px", maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <div className="footer-content" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: "#334155" }}>
             © 2025 Talha Hassan • Built with Next.js + Tailwind
           </div>
