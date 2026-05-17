@@ -277,12 +277,42 @@ export default function Home() {
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
           {projects.map((p, i) => (
-            <article 
-              key={p.name} 
-              className={`project-card anim-fade-up d-${(i % 4 + 1) * 100}`}
-              onClick={() => window.open(p.url, '_blank')}
-              style={{ cursor: 'pointer' }}
-            >
+              <article
+                key={p.name}
+                className={`project-card anim-fade-up d-${(i % 4 + 1) * 100}`}
+                onClick={() => window.open(p.url, "_blank")}
+                onMouseEnter={(e) => {
+                  if (typeof window === "undefined") return;
+                  if (window.innerWidth < 768) return; // mobile safe
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.transform = "translateZ(0) rotateX(6deg) rotateY(-8deg) translateY(-6px)";
+                  el.style.boxShadow = "0 24px 80px rgba(0,0,0,0.55), 0 0 28px rgba(56,189,248,0.10)";
+                }}
+                onMouseMove={(e) => {
+                  if (typeof window === "undefined") return;
+                  if (window.innerWidth < 768) return; // mobile safe
+                  const el = e.currentTarget as HTMLElement;
+                  const rect = el.getBoundingClientRect();
+                  const x = (e.clientX - rect.left) / rect.width; // 0..1
+                  const y = (e.clientY - rect.top) / rect.height; // 0..1
+                  const rx = (0.5 - y) * 10;
+                  const ry = (x - 0.5) * 14;
+                  el.style.transform = `translateZ(0) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+                  el.style.boxShadow = "0 24px 80px rgba(0,0,0,0.55), 0 0 28px rgba(56,189,248,0.10)";
+                }}
+                onMouseLeave={(e) => {
+                  const el = e.currentTarget as HTMLElement;
+                  el.style.transform = "translateZ(0) rotateX(0deg) rotateY(0deg) translateY(0px)";
+                  el.style.boxShadow = "";
+                }}
+                style={{
+                  cursor: "pointer",
+                  transformStyle: "preserve-3d",
+                  perspective: 900,
+                  willChange: "transform",
+                  transition: "transform 160ms ease, box-shadow 160ms ease",
+                }}
+              >
               {/* Card top bar */}
               <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", marginBottom: 20 }}>
                 <div>
