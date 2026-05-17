@@ -275,7 +275,13 @@ export default function Home() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: 24,
+          }}
+        >
           {projects.map((p, i) => (
               <article
                 key={p.name}
@@ -372,6 +378,11 @@ export default function Home() {
               </a>
             </article>
           ))}
+        <style>{`
+          @media (max-width: 420px){
+            #projects > div[style*="gridTemplateColumns"]{ gap: 16 !important; }
+          }
+        `}</style>
         </div>
       </section>
 
