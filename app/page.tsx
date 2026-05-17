@@ -285,8 +285,8 @@ export default function Home() {
                   if (typeof window === "undefined") return;
                   if (window.innerWidth < 768) return; // mobile safe
                   const el = e.currentTarget as HTMLElement;
-                  el.style.transform = "translateZ(0) rotateX(6deg) rotateY(-8deg) translateY(-6px)";
-                  el.style.boxShadow = "0 24px 80px rgba(0,0,0,0.55), 0 0 28px rgba(56,189,248,0.10)";
+                  el.style.transform = "translateZ(0) rotateX(16deg) rotateY(-22deg) translateY(-14px)";
+                  el.style.boxShadow = "0 40px 120px rgba(0,0,0,0.70), 0 0 44px rgba(56,189,248,0.18)";
                 }}
                 onMouseMove={(e) => {
                   if (typeof window === "undefined") return;
@@ -297,8 +297,8 @@ export default function Home() {
                   const y = (e.clientY - rect.top) / rect.height; // 0..1
                   const rx = (0.5 - y) * 10;
                   const ry = (x - 0.5) * 14;
-                  el.style.transform = `translateZ(0) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-                  el.style.boxShadow = "0 24px 80px rgba(0,0,0,0.55), 0 0 28px rgba(56,189,248,0.10)";
+                  el.style.transform = `translateZ(0) rotateX(${rx * 1.6}deg) rotateY(${ry * 1.6}deg) translateY(-14px)`;
+                  el.style.boxShadow = "0 40px 120px rgba(0,0,0,0.70), 0 0 44px rgba(56,189,248,0.18)";
                 }}
                 onMouseLeave={(e) => {
                   const el = e.currentTarget as HTMLElement;
