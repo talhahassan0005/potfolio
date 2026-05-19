@@ -61,8 +61,8 @@ const projects = [
     name: "ShipSense",
     url: "https://ship-sense.vercel.app/",
     description: "AI-powered logistics intelligence platform with real-time shipment tracking, predictive analytics, automated notifications, and comprehensive dashboard for supply chain visibility.",
-    highlights: ["AI-Powered Analytics", "Real-time Tracking", "Automated Workflows"],
-    tags: ["AI/ML", "Logistics", "Analytics"],
+    highlights: ["AI-Powered Analytics", "Agentic AI Chatbot", "Real-time Tracking", "Automated Workflows"],
+    tags: ["Machine Learning", "Logistics", "Analytics"],
     color: "#f472b6",
   },
 ];
