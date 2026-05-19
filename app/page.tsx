@@ -69,7 +69,7 @@ const projects = [
 
 const skills = [
   "Next.js", "React", "TypeScript", "Node.js", "PHP", "PostgreSQL",
-  "MongoDB", "REST APIs", "Auth + RBAC", "AI/ML Integration",
+  "MongoDB", "REST APIs", "Auth + RBAC", "AI/ML Integration", "MLOPS", "Agentic AI",
   "Data Engineering", "Performance + SEO",
 ];
 
