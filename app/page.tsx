@@ -56,6 +56,15 @@ const projects = [
     tags: ["Marketplace", "Multi-vendor", "Payments"],
     color: "#38bdf8",
   },
+  {
+    num: "07",
+    name: "ShipSense",
+    url: "https://ship-sense.vercel.app/",
+    description: "AI-powered logistics intelligence platform with real-time shipment tracking, predictive analytics, automated notifications, and comprehensive dashboard for supply chain visibility.",
+    highlights: ["AI-Powered Analytics", "Real-time Tracking", "Automated Workflows"],
+    tags: ["AI/ML", "Logistics", "Analytics"],
+    color: "#f472b6",
+  },
 ];
 
 const skills = [
@@ -127,7 +136,7 @@ export default function Home() {
             {/* STATS */}
             <div className="anim-fade-up d-400 stats-row" style={{ display: "flex", gap: 40 }}>
               {[
-                { val: "6+", label: "Live Projects" },
+                { val: "7+", label: "Live Projects" },
                 { val: "3+", label: "Years Exp." },
                 { val: "100%", label: "Client Satisfaction" },
               ].map(s => (
